@@ -23,3 +23,11 @@ git clone https://github.com/iqrakhan-0126/e-commerceclothing01website.git
 cd e-commerceclothing01website
 npm install
 npm start
+
+🌐 Live Demo
+https://e-commercewebsit01.netlify.app/
+
+👩‍💻 Author
+
+Iqra Vasim Khan
+Frontend Developer
