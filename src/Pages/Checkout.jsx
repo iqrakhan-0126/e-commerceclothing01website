@@ -4,7 +4,7 @@ import { ShopContext } from '../Context/ShopContext';
 import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-    const { getTotalCartAmount, cartItems, all_product } = useContext(ShopContext);
+    const { getTotalCartAmount } = useContext(ShopContext);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
