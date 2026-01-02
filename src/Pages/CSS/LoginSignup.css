@@ -1,11 +1,119 @@
-.loginsignup{
+.loginsignup {
     width: 100%;
-    height: 80vh;
-    background: #fce3fe;
-    padding-top: 100px;
+    min-height: 100vh;
+    padding: 100px 0;
+    background: linear-gradient(170deg, rgb(247, 157, 220), oklch(92.362% 0.01312 321.543) 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.loginsignup-container{
+.loginsignup-container {
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    padding: 40px 60px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.loginsignup-container h1 {
+    margin: 20px 0px;
+    color: var(--text-main);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.loginsignup-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.loginsignup-fields input {
+    height: 60px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.loginsignup-fields input:focus {
+    border-color: var(--accent);
+}
+
+.loginsignup-container button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background: var(--accent);
+    margin-top: 30px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.loginsignup-container button:hover {
+    background: var(--accent-hover);
+}
+
+.loginsignup-login {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.loginsignup-login span {
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.loginsignup-agree {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    .loginsignup {
+        padding: 60px 20px;
+    }
+
+    .loginsignup-container {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .loginsignup-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .loginsignup-fields input {
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .loginsignup-container button {
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+.loginsignup-container {
     width: 580px;
     height: 600px;
     background: white;
@@ -13,11 +121,11 @@
     padding: 40px 60px;
 }
 
-.loginsignup-container h1{
-    margin: 20px 0px ;
+.loginsignup-container h1 {
+    margin: 20px 0px;
 }
 
-.loginsignup-fields{
+.loginsignup-fields {
     display: flex;
     flex-direction: column;
     gap: 29px;
@@ -25,18 +133,18 @@
 
 }
 
-.loginsignup-fields input{
- height: 72px;
- width: 100%;
- padding-left: 20px;
- border: 1px solid #c9c9c9;
- outline: none;
- color: #5c5c5c;
- font-size: 18px ;
+.loginsignup-fields input {
+    height: 72px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 18px;
 
 }
 
-.loginsignup-fields button{
+.loginsignup-fields button {
     width: 580px;
     height: 72px;
     background: #ff4141;
@@ -47,7 +155,7 @@
     padding-top: 100px;
 }
 
-.loginsignup-container{
+.loginsignup-container {
     width: 580px;
     height: 600px;
     background: white;
@@ -55,11 +163,11 @@
     padding: 40px 60px;
 }
 
-.loginsignup-container h1{
-    margin: 20px 0px ;
+.loginsignup-container h1 {
+    margin: 20px 0px;
 }
 
-.loginsignup-fields{
+.loginsignup-fields {
     display: flex;
     flex-direction: column;
     gap: 29px;
@@ -67,43 +175,43 @@
 
 }
 
-.loginsignup-fields input{
- height: 72px;
- width: 100%;
- padding-left: 20px;
- border: 1px solid #c9c9c9;
- outline: none;
- color: #5c5c5c;
- font-size: 18px ;
+.loginsignup-fields input {
+    height: 72px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 18px;
 
 }
 
-.loginsignup-container button{
+.loginsignup-container button {
     width: 580px;
     height: 72px;
     color: white;
     background: #ff4141;
-    margin-top:30px ;
+    margin-top: 30px;
     border: none;
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
-    
+
 }
 
-.loginsignup-login{
+.loginsignup-login {
     margin-top: 20px;
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
 }
 
-.loginsignup-login span{
+.loginsignup-login span {
     color: #ff4141;
     font-weight: 600;
 }
 
-.loginsignup-agree{
+.loginsignup-agree {
     display: flex;
     align-items: center;
     margin-top: 25px;
@@ -113,56 +221,63 @@
     font-weight: 500;
 }
 
-@media(max-width:1280px){
-    .loginsignup{
+@media(max-width:1280px) {
+    .loginsignup {
         padding-top: 50px;
     }
-    .loginsignup-container{
+
+    .loginsignup-container {
         width: auto;
         max-width: 500px;
         max-height: 500px;
     }
-    .loginsignup-container h1{
+
+    .loginsignup-container h1 {
         margin: 10px 0px;
     }
-    .loginsignup-fields{
+
+    .loginsignup-fields {
         gap: 20px;
         margin-top: 20px;
     }
 
-    .loginsignup-fields input{
+    .loginsignup-fields input {
         height: 65px;
         width: 93%;
     }
-    .loginsignup-container button{
+
+    .loginsignup-container button {
         width: 100%;
     }
-    .loginsignup-login{
+
+    .loginsignup-login {
         font-size: 16px;
     }
-    .loginsignup-agree{
+
+    .loginsignup-agree {
         font-size: 14px;
         gap: 10px;
     }
 }
 
-@media(max-width:800px){
-    .loginsignup-container{
+@media(max-width:800px) {
+    .loginsignup-container {
         padding: 20px 30px;
     }
 
-    .loginsignup-container h1{
+    .loginsignup-container h1 {
         font-size: 24px;
     }
 
-    .loginsignup-fields{
+    .loginsignup-fields {
         margin-top: 20px;
     }
 
-    .loginsignup-fields input{
+    .loginsignup-fields input {
         height: 50px;
     }
-    .loginsignup-container button{
+
+    .loginsignup-container button {
         height: 50px;
         font-size: 16px;
     }

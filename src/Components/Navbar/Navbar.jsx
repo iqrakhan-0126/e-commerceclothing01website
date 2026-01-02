@@ -42,11 +42,17 @@ const Navbar = () => {
           <Link to='/kids'>Kids</Link>
           {menu === "kids" ? <hr /> : <></>}
         </li>
+        <li onClick={() => { setMenu("track") }}>
+          <Link to='/order-tracking'>Track Order</Link>
+          {menu === "track" ? <hr /> : <></>}
+        </li>
       </ul>
 
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')
-          ? <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
+          ? <div className="nav-profile-avatar" onClick={() => { localStorage.removeItem('auth-token'); localStorage.removeItem('user-name'); window.location.replace('/') }} title="Logout">
+            {localStorage.getItem('user-name') ? localStorage.getItem('user-name')[0].toUpperCase() : 'U'}
+          </div>
           : <Link to='/login'><button>Login</button></Link>
         }
 

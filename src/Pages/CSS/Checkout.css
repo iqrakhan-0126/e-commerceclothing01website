@@ -1,0 +1,111 @@
+.checkout {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    min-height: 80vh;
+}
+
+.checkout-left {
+    flex: 1;
+}
+
+.checkout-left h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-main);
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-field-group {
+    display: flex;
+    gap: 20px;
+}
+
+.checkout-field-group input {
+    flex: 1;
+}
+
+.checkout-form input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.checkout-form input:focus {
+    border-color: var(--accent);
+}
+
+.checkout-right {
+    flex: 0.8;
+    background: var(--surface);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    height: fit-content;
+}
+
+.checkout-summary-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.checkout-total-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.checkout-total-item.total {
+    border-bottom: none;
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    height: 60px;
+    background: var(--accent);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-sm);
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.checkout-btn:hover {
+    background: var(--accent-hover);
+}
+
+@media (max-width: 900px) {
+    .checkout {
+        flex-direction: column;
+    }
+
+    .checkout-right {
+        width: 100%;
+    }
+}

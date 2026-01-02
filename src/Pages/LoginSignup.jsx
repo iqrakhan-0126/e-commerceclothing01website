@@ -3,60 +3,41 @@ import './CSS/LoginSignup.css';
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
-  const [formData,setFormData] = useState({
-    username:"",
-    password:"",
-    email:""
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    email: ""
+  });
 
-  })
-
-  const changeHandler = (e)=>{
-    setFormData({...formData,[e.target.name]:e.target.value})
+  const changeHandler = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-
   const login = async () => {
-    console.log("Login function executed", formData);
-
-     let responseData;
-    await fetch('http://localhost:4000/login',{
-      method:'POST',
-      headers:{
-        Accept:'application/form-data',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(formData),
-      }).then((response)=> response.json()).then((data)=>responseData=data)
-  
-    if(responseData.success){
-      localStorage.setItem('auth-token',responseData.token);
+    console.log("Login executed", formData);
+    if (formData.email && formData.password) {
+      localStorage.setItem('auth-token', 'simulated-token-123');
+      // Simulate getting name from email if not provided
+      const simulatedName = formData.email.split('@')[0];
+      localStorage.setItem('user-name', simulatedName);
+      alert("Login Successfully");
       window.location.replace('/');
-    }
-    else{
-      alert(responseData.errors)
+    } else {
+      alert("Please fill in all fields");
     }
   };
 
   const signup = async () => {
-    console.log("Signup function executed", formData);
-    let responseData;
-    await fetch('http://localhost:4000/signup',{
-      method:'POST',
-      headers:{
-        Accept:'application/form-data',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(formData),
-      }).then((response)=> response.json()).then((data)=>responseData=data)
-  
-    if(responseData.success){
-      localStorage.setItem('auth-token',responseData.token);
+    console.log("Signup executed", formData);
+    // Simulate API call
+    if (formData.username && formData.email && formData.password) {
+      localStorage.setItem('auth-token', 'simulated-token-123');
+      localStorage.setItem('user-name', formData.username);
+      alert("Signup Successfully");
       window.location.replace("/");
+    } else {
+      alert("Please fill in all fields");
     }
-    else{
-      alert(responseData.errors)
-    }
-
   }
 
   return (
@@ -67,7 +48,7 @@ const LoginSignup = () => {
           {state === "Sign Up" ? (
             <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' />
           ) : null}
-          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email' />
+          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' />
           <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
         </div>
         <button onClick={() => { state === "Login" ? login() : signup() }}>Continue</button>
@@ -88,20 +69,5 @@ const LoginSignup = () => {
     </div>
   );
 };
- 
+
 export default LoginSignup;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -18,13 +18,13 @@ const ShopContextProvider = (props) => {
     useEffect(() => {
         const storedCart = localStorage.getItem('cartItems');
         if (storedCart) {
-            // setCartItems(JSON.parse(storedCart)); // Optional: Enable if you want strict persistence across reloads without backend
+            setCartItems(JSON.parse(storedCart));
         }
     }, []);
 
     // Save to local storage whenever cart changes
     useEffect(() => {
-        // localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, [cartItems]);
 
     const addToCart = (itemId) => {
